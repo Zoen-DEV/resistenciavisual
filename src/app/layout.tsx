@@ -20,8 +20,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Camila Lemos — Fotografía",
-  description: "Portafolio de fotografía de Camila Lemos",
+  title: "Camila Lemos — Resistencia Visual",
+  description: "Portafolio de Camila Lemos - Resistencia Visual.",
 };
 
 export default function RootLayout({
