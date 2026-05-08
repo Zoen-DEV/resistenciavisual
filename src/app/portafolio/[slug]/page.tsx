@@ -31,7 +31,7 @@ export default async function ProjectPage({ params }: Props) {
         <h1 className="font-(family-name:--font-cormorant) text-3xl font-light text-foreground mb-2">
           <ProjectTitle slug={project.slug} fallback={project.title} />
         </h1>
-        <p className="text-xs text-muted tracking-widest mb-4">{project.year}</p>
+        {project.year !== 0 && <p className="text-xs text-muted tracking-widest mb-4">{project.year}</p>}
         <ProjectDescription slug={project.slug} fallback={project.description} />
       </div>
 

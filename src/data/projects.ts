@@ -175,9 +175,9 @@ export const projects: Project[] = [
   {
     slug: "hecha-un-vistazo",
     title: "Hecha un vistazo",
-    year: 2023,
+    year: 0,
     description:
-      "Fragmentos de lugares que merecen ser vistos dos veces. Una invitación a detenerse y observar.",
+      "",
     coverImage: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=800&q=80",
     photos: [
       {
