@@ -1,65 +1,72 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { projects } from "@/data/projects";
+import { useLang } from "@/context/LanguageContext";
+
+const featured = projects[0];
+
+export default function HomePage() {
+  const { t } = useLang();
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <div className="relative h-[calc(100vh-57px)] lg:h-screen overflow-hidden">
+      {/* Hero image — full bleed */}
+      <motion.div
+        className="absolute inset-0"
+        initial={{ scale: 1.04, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+      >
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src={featured.coverImage}
+          alt={featured.title}
+          fill
+          className="object-cover"
+          sizes="100vw"
           priority
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+        {/* Gradient overlay — suave, solo en la parte inferior */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/50" />
+      </motion.div>
+
+      {/* Caption bottom-left */}
+      <motion.div
+        className="absolute bottom-10 left-10"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <Link href={`/portafolio/${featured.slug}`} className="group block">
+          <p className="text-white/50 text-xs tracking-widest uppercase mb-1">
+            {t.home.recentProject}
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+          <h2 className="font-[family-name:var(--font-cormorant)] text-white text-3xl font-light leading-tight group-hover:opacity-80 transition-opacity">
+            {featured.title}
+          </h2>
+          <p className="text-white/50 text-xs mt-1">{featured.year}</p>
+        </Link>
+      </motion.div>
+
+      {/* Scroll hint */}
+      <motion.div
+        className="hidden lg:flex absolute bottom-10 right-10 flex-col items-center gap-2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 1.4 }}
+      >
+        <span className="text-white/40 text-[10px] tracking-widest uppercase rotate-90 origin-center">
+          {t.home.portfolio}
+        </span>
+        <Link
+          href="/portafolio"
+          className="text-white/40 hover:text-white/80 transition-colors text-xs tracking-widest"
+        >
+          →
+        </Link>
+      </motion.div>
     </div>
   );
 }
