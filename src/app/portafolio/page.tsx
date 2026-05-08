@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { projects } from "@/data/projects";
+import ProjectTitle from "@/components/ProjectTitle";
 
 export default function PortfolioPage() {
   return (
@@ -24,7 +27,7 @@ export default function PortfolioPage() {
             </div>
             <div className="flex items-baseline justify-between">
               <p className="font-(family-name:--font-cormorant) text-xl font-light text-foreground">
-                {project.title}
+                <ProjectTitle slug={project.slug} fallback={project.title} />
               </p>
               <p className="text-xs text-muted">{project.year}</p>
             </div>
@@ -50,7 +53,7 @@ export default function PortfolioPage() {
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-500" />
             <div className="absolute inset-0 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-400">
               <p className="text-white font-(family-name:--font-cormorant) text-lg font-medium leading-tight">
-                {project.title}
+                <ProjectTitle slug={project.slug} fallback={project.title} />
               </p>
               <p className="text-white/70 text-xs mt-0.5">{project.year}</p>
             </div>

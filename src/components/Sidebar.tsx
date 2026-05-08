@@ -5,6 +5,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { projects } from "@/data/projects";
 import { useLang } from "@/context/LanguageContext";
+import ProjectTitle from "@/components/ProjectTitle";
 import LanguageSelector from "@/components/LanguageSelector";
 
 export default function Sidebar() {
@@ -57,7 +58,7 @@ export default function Sidebar() {
                         isProjectActive(project.slug) ? "text-foreground font-medium" : "text-muted"
                       }`}
                     >
-                      {project.title}
+                      <ProjectTitle slug={project.slug} fallback={project.title} />
                     </Link>
                   </li>
                 ))}
@@ -98,7 +99,7 @@ export default function Sidebar() {
                           : "text-muted hover:text-foreground"
                       }`}
                     >
-                      {project.title}
+                      <ProjectTitle slug={project.slug} fallback={project.title} />
                     </Link>
                   </li>
                 ))}

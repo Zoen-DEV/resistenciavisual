@@ -9,7 +9,7 @@ interface Props {
 
 export default function ProjectDescription({ slug, fallback }: Props) {
   const { t } = useLang();
-  const text = (t.projects as Record<string, string | undefined>)[slug] ?? fallback;
+  const text = (t.projects.descriptions as Record<string, string | undefined>)[slug] ?? fallback;
 
   return (
     <div className="flex flex-col gap-3">

@@ -27,8 +27,16 @@ export const translations = {
       ],
     },
     projects: {
-      cotidiana: "Registros fotográficos que observan lo que ocurre en la vida diaria, en espacios públicos y situaciones no intervenidas. La imagen se construye desde la atención a los gestos mínimos, encuentros espontáneos y los ritmos de la calle o el hogar, capturando así escenas que revelan lo cotidiano desde una mirada sensible.\nMás que documentar, busco encontrar sentido y narrativas en lo aparentemente ordinario.",
-      "lo-que-comemos": "En pueblos y ciudades, las plazas de mercado son centros de abastecimiento alimenticio, cultural y social, puntos de encuentro; espacios llenos de gentes trabajadoras por el sustento propio y de su comunidad.\nEncontramos frutas, verduras, hierbas, semillas, productos lácteos, venta de carnes, artesanías, desayunos, almuerzos, cenas, pa picar y tomar, dulcecitos, chucherías, ropas y un sin fin de saberes, de raíces, años de lucha y resistencia de vidas que vienen y traen a nosotrxs la alegría de los alimentos y un espacio para llegar a estos a precios amigables (si no tenemos la opción de cultivar en casa) para compartir y ¡para comeeeer!.",
+      titles: {
+        "habitarnos-en-el-tiempo": "Habitarnos en el tiempo",
+        "cotidiana": "Cotidiana",
+        "lo-que-comemos": "Lo que comemos",
+        "hecha-un-vistazo": "Hecha un vistazo",
+      },
+      descriptions: {
+        cotidiana: "Registros fotográficos que observan lo que ocurre en la vida diaria, en espacios públicos y situaciones no intervenidas. La imagen se construye desde la atención a los gestos mínimos, encuentros espontáneos y los ritmos de la calle o el hogar, capturando así escenas que revelan lo cotidiano desde una mirada sensible.\nMás que documentar, busco encontrar sentido y narrativas en lo aparentemente ordinario.",
+        "lo-que-comemos": "En pueblos y ciudades, las plazas de mercado son centros de abastecimiento alimenticio, cultural y social, puntos de encuentro; espacios llenos de gentes trabajadoras por el sustento propio y de su comunidad.\nEncontramos frutas, verduras, hierbas, semillas, productos lácteos, venta de carnes, artesanías, desayunos, almuerzos, cenas, pa picar y tomar, dulcecitos, chucherías, ropas y un sin fin de saberes, de raíces, años de lucha y resistencia de vidas que vienen y traen a nosotrxs la alegría de los alimentos y un espacio para llegar a estos a precios amigables (si no tenemos la opción de cultivar en casa) para compartir y ¡para comeeeer!.",
+      },
     },
     store: {
       title: "Tienda",
@@ -61,8 +69,16 @@ export const translations = {
       ],
     },
     projects: {
-      cotidiana: "Photographic records that observe what unfolds in daily life, in public spaces and unposed situations. The image is built through attention to subtle gestures, spontaneous encounters, and the rhythms of the street or the home, capturing scenes that reveal the everyday through a sensitive gaze.\nMore than documenting, I seek to find meaning and narratives in what appears to be ordinary.",
-      "lo-que-comemos": "In both rural and urban contexts, market plazas operate as spaces of exchange that extend beyond food. They are sites where economic, cultural, and social dynamics converge, sustained by the labor of those who cultivate, prepare, and distribute.\nFruits, vegetables, herbs, meats, and prepared foods coexist with crafts, informal economies, and everyday interactions. These spaces hold layered histories of knowledge, resilience, and collective sustenance, shaping how food circulates and how communities gather around it.\nThis body of work approaches the market as a living archive—one that reveals the relationships between food, territory, and shared forms of survival and care.",
+      titles: {
+        "habitarnos-en-el-tiempo": "Inhabiting Time",
+        "cotidiana": "Daily",
+        "lo-que-comemos": "What we eat",
+        "hecha-un-vistazo": "Take a Look",
+      },
+      descriptions: {
+        cotidiana: "Photographic records that observe what unfolds in daily life, in public spaces and unposed situations. The image is built through attention to subtle gestures, spontaneous encounters, and the rhythms of the street or the home, capturing scenes that reveal the everyday through a sensitive gaze.\nMore than documenting, I seek to find meaning and narratives in what appears to be ordinary.",
+        "lo-que-comemos": "In both rural and urban contexts, market plazas operate as spaces of exchange that extend beyond food. They are sites where economic, cultural, and social dynamics converge, sustained by the labor of those who cultivate, prepare, and distribute.\nFruits, vegetables, herbs, meats, and prepared foods coexist with crafts, informal economies, and everyday interactions. These spaces hold layered histories of knowledge, resilience, and collective sustenance, shaping how food circulates and how communities gather around it.\nThis body of work approaches the market as a living archive—one that reveals the relationships between food, territory, and shared forms of survival and care.",
+      },
     },
     store: {
       title: "Store",
@@ -103,4 +119,9 @@ export function useLang() {
   const ctx = useContext(LanguageContext);
   if (!ctx) throw new Error("useLang must be used inside LanguageProvider");
   return ctx;
+}
+
+export function useProjectTitle(slug: string, fallback: string): string {
+  const { t } = useLang();
+  return (t.projects.titles as Record<string, string | undefined>)[slug] ?? fallback;
 }

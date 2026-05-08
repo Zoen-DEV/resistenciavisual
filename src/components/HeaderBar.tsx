@@ -3,12 +3,18 @@
 import { usePathname } from "next/navigation";
 import Breadcrumb from "@/components/Breadcrumb";
 import LanguageSelector from "@/components/LanguageSelector";
-import { useLang } from "@/context/LanguageContext";
+import { useLang, useProjectTitle } from "@/context/LanguageContext";
 import { projects } from "@/data/projects";
 
 export default function HeaderBar() {
   const pathname = usePathname();
   const { t } = useLang();
+
+  const slug = pathname.startsWith("/portafolio/")
+    ? pathname.replace("/portafolio/", "")
+    : null;
+  const project = slug ? projects.find((p) => p.slug === slug) : null;
+  const projectTitle = useProjectTitle(slug ?? "", project?.title ?? slug ?? "");
 
   if (pathname === "/") {
     return (
@@ -18,7 +24,7 @@ export default function HeaderBar() {
     );
   }
 
-  const crumbs = buildCrumbs(pathname, t);
+  const crumbs = buildCrumbs(pathname, t, projectTitle);
 
   return (
     <header className="px-8 py-4 border-b border-border shrink-0 flex items-center justify-between">
@@ -28,17 +34,15 @@ export default function HeaderBar() {
   );
 }
 
-function buildCrumbs(pathname: string, t: ReturnType<typeof useLang>["t"]) {
+function buildCrumbs(pathname: string, t: ReturnType<typeof useLang>["t"], projectTitle: string) {
   if (pathname === "/portafolio") {
     return [{ label: t.nav.portfolio }];
   }
 
   if (pathname.startsWith("/portafolio/")) {
-    const slug = pathname.replace("/portafolio/", "");
-    const project = projects.find((p) => p.slug === slug);
     return [
       { label: t.nav.portfolio, href: "/portafolio" },
-      { label: project?.title ?? slug },
+      { label: projectTitle },
     ];
   }
 
