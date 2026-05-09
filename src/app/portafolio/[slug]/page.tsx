@@ -17,7 +17,25 @@ export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return {};
-  return { title: `${project.title} — Camila Lemos` };
+
+  const ogImage = project.photos[0]
+    ? { url: project.photos[0].src, width: project.photos[0].width, height: project.photos[0].height, alt: project.title }
+    : undefined;
+
+  return {
+    title: project.title,
+    ...(project.description && { description: project.description }),
+    openGraph: {
+      title: `${project.title} — Camila Lemos`,
+      ...(project.description && { description: project.description }),
+      ...(ogImage && { images: [ogImage] }),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} — Camila Lemos`,
+      ...(project.description && { description: project.description }),
+    },
+  };
 }
 
 export default async function ProjectPage({ params }: Props) {
