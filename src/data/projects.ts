@@ -16,6 +16,7 @@ export interface Project {
   description: string;
   coverImage: string;
   photos: Photo[];
+  wip?: boolean;
 }
 
 export const projects: Project[] = [
@@ -23,6 +24,7 @@ export const projects: Project[] = [
     slug: "cuerpo-territorio",
     title: "Cuerpo-Territorio",
     year: 2024,
+    wip: true,
     description:
       "Una exploración visual sobre la memoria y los espacios que habitamos. Retratos del paso del tiempo en lugares cotidianos.",
     coverImage: cldUrl("cuerpo-territorio/1_hj74dt", "thumb"),
