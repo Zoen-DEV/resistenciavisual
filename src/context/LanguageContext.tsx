@@ -28,7 +28,7 @@ export const translations = {
     },
     projects: {
       titles: {
-        "habitarnos-en-el-tiempo": "Habitarnos en el tiempo",
+        "cuerpo-territorio": "Cuerpo-Territorio",
         "cotidiana": "Cotidiana",
         "lo-que-comemos": "Lo que comemos",
         "hecha-un-vistazo": "Hecha un vistazo",
@@ -70,7 +70,7 @@ export const translations = {
     },
     projects: {
       titles: {
-        "habitarnos-en-el-tiempo": "Inhabiting Time",
+        "cuerpo-territorio": "Body-Territory",
         "cotidiana": "Daily",
         "lo-que-comemos": "What we eat",
         "hecha-un-vistazo": "Take a Look",

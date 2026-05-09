@@ -5,8 +5,10 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { projects } from "@/data/projects";
 import { useLang } from "@/context/LanguageContext";
+import { cldUrl } from "@/lib/cloudinary";
 
 const featured = projects[0];
+const homeImage = cldUrl("home/1_ps3szf", "full");
 
 export default function HomePage() {
   const { t } = useLang();
@@ -21,7 +23,7 @@ export default function HomePage() {
         transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <Image
-          src={featured.coverImage}
+          src={homeImage}
           alt={featured.title}
           fill
           className="object-cover"
