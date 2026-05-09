@@ -12,3 +12,7 @@ const TRANSFORMS: Record<ImageSize, string> = {
 export function cldUrl(publicId: string, size: ImageSize = "grid"): string {
   return `${BASE}/${TRANSFORMS[size]}/${publicId}`;
 }
+
+export function cldBlur(publicId: string): string {
+  return `${BASE}/w_30,e_blur:1000,q_1,f_auto/${publicId}`;
+}

@@ -104,8 +104,10 @@ export default function Lightbox({
               src={photo.src}
               alt={photo.alt}
               fill
+              placeholder="blur"
+              blurDataURL={photo.blurDataURL}
               className="object-contain"
-              sizes="85vw"
+              sizes="(max-width: 768px) 100vw, 85vw"
               priority
             />
           </motion.div>

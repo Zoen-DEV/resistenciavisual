@@ -20,8 +20,24 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Camila Lemos — Resistencia Visual",
-  description: "Portafolio de Camila Lemos - Resistencia Visual.",
+  title: {
+    default: "Camila Lemos — Resistencia Visual",
+    template: "%s — Camila Lemos",
+  },
+  description: "Portafolio fotográfico de Camila Lemos. Proyectos de fotografía documental y artística.",
+  openGraph: {
+    type: "website",
+    siteName: "Camila Lemos — Resistencia Visual",
+    title: "Camila Lemos — Resistencia Visual",
+    description: "Portafolio fotográfico de Camila Lemos. Proyectos de fotografía documental y artística.",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Camila Lemos — Resistencia Visual",
+    description: "Portafolio fotográfico de Camila Lemos.",
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({

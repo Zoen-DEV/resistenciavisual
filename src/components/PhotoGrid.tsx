@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import Lightbox from "./Lightbox";
 import type { Photo } from "@/data/projects";
+
+const Lightbox = dynamic(() => import("./Lightbox"), { ssr: false });
 
 export default function PhotoGrid({ photos }: { photos: Photo[] }) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -38,7 +40,7 @@ export default function PhotoGrid({ photos }: { photos: Photo[] }) {
               ease: [0.25, 0.1, 0.25, 1],
             }}
             onClick={() => openLightbox(index)}
-            className="group relative overflow-hidden bg-[#e5e2dd] cursor-pointer w-full block mb-1"
+            className="group relative overflow-hidden bg-border cursor-pointer w-full block mb-1"
             style={{
               breakInside: "avoid",
               aspectRatio: `${photo.width} / ${photo.height}`,
@@ -48,6 +50,8 @@ export default function PhotoGrid({ photos }: { photos: Photo[] }) {
               src={photo.src}
               alt={photo.alt}
               fill
+              placeholder="blur"
+              blurDataURL={photo.blurDataURL}
               className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105"
               sizes="(max-width: 768px) 50vw, 33vw"
             />
