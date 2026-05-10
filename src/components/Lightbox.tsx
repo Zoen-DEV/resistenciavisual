@@ -24,10 +24,6 @@ export default function Lightbox({
   const photo = currentIndex !== null ? photos[currentIndex] : null;
   const [imgLoaded, setImgLoaded] = useState(false);
 
-  useEffect(() => {
-    setImgLoaded(false);
-  }, [currentIndex]);
-
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (!isOpen) return;

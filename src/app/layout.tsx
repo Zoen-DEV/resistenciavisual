@@ -20,16 +20,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://resistenciavisual.vercel.app"),
   title: {
     default: "Camila Lemos — Resistencia Visual",
     template: "%s — Camila Lemos",
   },
-  description: "Portafolio fotográfico de Camila Lemos. Proyectos de fotografía documental y artística.",
+  description: "Portafolio fotográfico de Camila Lemos. Fotografía documental y artística que explora cuerpo, territorio, memoria y vida cotidiana en Latinoamérica.",
+  authors: [{ name: "Camila Lemos" }],
+  creator: "Camila Lemos",
+  keywords: ["fotografía", "fotografía documental", "Camila Lemos", "portafolio fotográfico", "arte visual", "Latinoamérica"],
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
+    locale: "es_ES",
     siteName: "Camila Lemos — Resistencia Visual",
     title: "Camila Lemos — Resistencia Visual",
-    description: "Portafolio fotográfico de Camila Lemos. Proyectos de fotografía documental y artística.",
+    description: "Portafolio fotográfico de Camila Lemos. Fotografía documental y artística que explora cuerpo, territorio, memoria y vida cotidiana en Latinoamérica.",
     images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {

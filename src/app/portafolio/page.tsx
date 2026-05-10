@@ -29,7 +29,7 @@ export default function PortfolioPage() {
                 <p className="font-(family-name:--font-cormorant) text-xl font-light text-foreground">
                   <ProjectTitle slug={project.slug} fallback={project.title} />
                 </p>
-                {project.year !== "" && <ProjectYear slug={project.slug} fallback={project.year} className="text-[10px] text-muted tracking-widest" />}
+                {project.year !== "" ? <ProjectYear slug={project.slug} fallback={project.year} className="text-[10px] text-muted tracking-widest" /> : null}
               </div>
             </Link>
           ))}
@@ -56,7 +56,7 @@ export default function PortfolioPage() {
                 <p className="font-(family-name:--font-cormorant) text-lg font-light text-foreground group-hover:opacity-60 transition-opacity duration-300">
                   <ProjectTitle slug={project.slug} fallback={project.title} />
                 </p>
-                {project.year !== "" && <ProjectYear slug={project.slug} fallback={project.year} className="text-[10px] text-muted tracking-widest" />}
+                {project.year !== "" ? <ProjectYear slug={project.slug} fallback={project.year} className="text-[10px] text-muted tracking-widest" /> : null}
               </div>
             </Link>
           ))}
