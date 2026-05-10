@@ -33,6 +33,9 @@ export const translations = {
         "lo-que-comemos": "Lo que comemos",
         "hecha-un-vistazo": "Hecha un vistazo",
       },
+      years: {
+        "cuerpo-territorio": "2023 — En proceso",
+      },
       descriptions: {
         "cuerpo-territorio": "Cuerpo-Territorio: cartografías de la memoria y el tiempo es un proyecto fotográfico y audiovisual en desarrollo que documenta la transformación física y emocional tras el diagnóstico de cáncer de seno y la mastectomía radical de mi madre. A través de una narrativa construida entre ambas, la obra utiliza el registro documental y la experimentación visual para reflexionar sobre el cuerpo como territorio de memoria y las cicatrices que deja la enfermedad. Situándose en la intersección entre el tránsito íntimo y la realidad social de miles de mujeres en América Latina, el proyecto utiliza la imagen como una herramienta de acompañamiento y resistencia, transformando la experiencia personal en un espacio de diálogo colectivo sobre los cuidados, la memoria y la resiliencia.",
         cotidiana: "Registros fotográficos que observan lo que ocurre en la vida diaria, en espacios públicos y situaciones no intervenidas. La imagen se construye desde la atención a los gestos mínimos, encuentros espontáneos y los ritmos de la calle o el hogar, capturando así escenas que revelan lo cotidiano desde una mirada sensible.\nMás que documentar, busco encontrar sentido y narrativas en lo aparentemente ordinario.",
@@ -76,6 +79,9 @@ export const translations = {
         "cotidiana": "Daily",
         "lo-que-comemos": "What we eat",
         "hecha-un-vistazo": "Take a Look",
+      },
+      years: {
+        "cuerpo-territorio": "2023 — In progress",
       },
       descriptions: {
         "cuerpo-territorio": "Body-Territory: Cartographies of Memory and Time is a photographic and audiovisual project in progress that documents the physical and emotional transformation following a breast cancer diagnosis and radical mastectomy. Through a narrative constructed between us, the work employs documentary evidence and visual experimentation to reflect on the body as a territory of memory and the scars left by illness. Situated at the intersection of intimate experience and the social reality of countless women in Latin America, the project uses the image as a tool of accompaniment and resistance, transforming personal experience into a space for collective dialogue about care, memory, and resilience.",

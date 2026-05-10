@@ -54,7 +54,7 @@ export default async function ProjectPage({ params }: Props) {
           </h1>
           {project.wip && <WipBadge />}
         </div>
-        {project.year !== "" && <ProjectYear year={project.year} />}
+        {project.year !== "" && <ProjectYear slug={project.slug} fallback={project.year} />}
         <ProjectDescription slug={project.slug} fallback={project.description} />
       </div>
 

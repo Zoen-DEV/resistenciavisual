@@ -3,13 +3,14 @@
 import { useLang } from "@/context/LanguageContext";
 
 interface Props {
-  year: string | { es: string; en: string };
+  slug: string;
+  fallback: string;
+  className?: string;
 }
 
-export default function ProjectYear({ year }: Props) {
-  const { lang } = useLang();
+export default function ProjectYear({ slug, fallback, className = "text-xs text-muted tracking-widest mt-1 mb-4" }: Props) {
+  const { t } = useLang();
+  const year = (t.projects.years as Record<string, string | undefined>)[slug] ?? fallback;
 
-  const displayYear = typeof year === "string" ? year : year[lang];
-
-  return <p className="text-xs text-muted tracking-widest mt-1 mb-4">{displayYear}</p>;
+  return <p className={className}>{year}</p>;
 }

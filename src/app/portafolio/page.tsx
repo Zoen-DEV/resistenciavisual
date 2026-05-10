@@ -2,6 +2,7 @@ import Link from "next/link";
 import BlurImage from "@/components/BlurImage";
 import { projects } from "@/data/projects";
 import ProjectTitle from "@/components/ProjectTitle";
+import ProjectYear from "@/components/ProjectYear";
 
 export default function PortfolioPage() {
   return (
@@ -28,7 +29,7 @@ export default function PortfolioPage() {
                 <p className="font-(family-name:--font-cormorant) text-xl font-light text-foreground">
                   <ProjectTitle slug={project.slug} fallback={project.title} />
                 </p>
-                {project.year !== "" && <p className="text-[10px] text-muted tracking-widest">{project.year}</p>}
+                {project.year !== "" && <ProjectYear slug={project.slug} fallback={project.year} className="text-[10px] text-muted tracking-widest" />}
               </div>
             </Link>
           ))}
@@ -55,7 +56,7 @@ export default function PortfolioPage() {
                 <p className="font-(family-name:--font-cormorant) text-lg font-light text-foreground group-hover:opacity-60 transition-opacity duration-300">
                   <ProjectTitle slug={project.slug} fallback={project.title} />
                 </p>
-                {project.year !== "" && <p className="text-[10px] text-muted tracking-widest">{project.year}</p>}
+                {project.year !== "" && <ProjectYear slug={project.slug} fallback={project.year} className="text-[10px] text-muted tracking-widest" />}
               </div>
             </Link>
           ))}

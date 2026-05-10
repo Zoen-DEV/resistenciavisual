@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { projects } from "@/data/projects";
 import { useLang } from "@/context/LanguageContext";
 import { cldUrl } from "@/lib/cloudinary";
+import ProjectYear from "@/components/ProjectYear";
 
 const featured = projects[0];
 const homeImage = cldUrl("home/1_ps3szf", "full");
@@ -48,7 +49,7 @@ export default function HomePage() {
           <h2 className="font-[family-name:var(--font-cormorant)] text-white text-3xl font-light leading-tight group-hover:opacity-80 transition-opacity">
             {featured.title}
           </h2>
-          <p className="text-white/50 text-xs mt-1">{featured.year}</p>
+          <ProjectYear slug={featured.slug} fallback={featured.year} className="text-white/50 text-xs mt-1" />
         </Link>
       </motion.div>
 
