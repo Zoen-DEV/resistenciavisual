@@ -3,6 +3,7 @@ import { projects, getProject } from "@/data/projects";
 import PhotoGrid from "@/components/PhotoGrid";
 import ProjectDescription from "@/components/ProjectDescription";
 import ProjectTitle from "@/components/ProjectTitle";
+import ProjectYear from "@/components/ProjectYear";
 import WipBadge from "@/components/WipBadge";
 
 interface Props {
@@ -53,7 +54,7 @@ export default async function ProjectPage({ params }: Props) {
           </h1>
           {project.wip && <WipBadge />}
         </div>
-        {project.year !== "" && <p className="text-xs text-muted tracking-widest mt-1 mb-4">{project.year}</p>}
+        {project.year !== "" && <ProjectYear year={project.year} />}
         <ProjectDescription slug={project.slug} fallback={project.description} />
       </div>
 

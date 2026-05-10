@@ -12,7 +12,7 @@ export interface Photo {
 export interface Project {
   slug: string;
   title: string;
-  year: string;
+  year: string | { es: string; en: string };
   description: string;
   coverImage: string;
   photos: Photo[];
@@ -23,7 +23,7 @@ export const projects: Project[] = [
   {
     slug: "cuerpo-territorio",
     title: "Cuerpo-Territorio: Cartografías de la memoria y el tiempo.",
-    year: "2023 — En proceso",
+    year: { es: "2023 — En proceso", en: "2023 — In progress" },
     wip: true,
     description:
       "Cuerpo-Territorio: cartografías de la memoria y el tiempo es un proyecto fotográfico y audiovisual en desarrollo que documenta la transformación física y emocional tras el diagnóstico de cáncer de seno y la mastectomía radical de mi madre. A través de una narrativa construida entre ambas, la obra utiliza el registro documental y la experimentación visual para reflexionar sobre el cuerpo como territorio de memoria y las cicatrices que deja la enfermedad. Situándose en la intersección entre el tránsito íntimo y la realidad social de miles de mujeres en América Latina, el proyecto utiliza la imagen como una herramienta de acompañamiento y resistencia, transformando la experiencia personal en un espacio de diálogo colectivo sobre los cuidados, la memoria y la resiliencia.",
