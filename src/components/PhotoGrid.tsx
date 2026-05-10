@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import BlurImage from "./BlurImage";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import type { Photo } from "@/data/projects";
@@ -26,7 +26,7 @@ function PhotoItem({
       className="group relative overflow-hidden bg-border cursor-pointer w-full block"
       style={{ aspectRatio: `${photo.width} / ${photo.height}` }}
     >
-      <Image
+      <BlurImage
         src={photo.src}
         alt={photo.alt}
         fill

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Photo } from "@/data/projects";
@@ -22,6 +22,11 @@ export default function Lightbox({
 }: LightboxProps) {
   const isOpen = currentIndex !== null;
   const photo = currentIndex !== null ? photos[currentIndex] : null;
+  const [imgLoaded, setImgLoaded] = useState(false);
+
+  useEffect(() => {
+    setImgLoaded(false);
+  }, [currentIndex]);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -100,15 +105,19 @@ export default function Lightbox({
             }}
             onClick={(e) => e.stopPropagation()}
           >
+            {!imgLoaded && (
+              <span className="absolute inset-0 z-10 animate-shimmer bg-[linear-gradient(90deg,transparent_0%,rgba(255,255,255,0.04)_50%,transparent_100%)] bg-size-[200%_100%]" />
+            )}
             <Image
               src={photo.src}
               alt={photo.alt}
               fill
               placeholder="blur"
               blurDataURL={photo.blurDataURL}
-              className="object-contain"
+              className={`object-contain transition-opacity duration-500 ease-in-out ${imgLoaded ? "opacity-100" : "opacity-0"}`}
               sizes="(max-width: 768px) 100vw, 85vw"
               priority
+              onLoad={() => setImgLoaded(true)}
             />
           </motion.div>
 

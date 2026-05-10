@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import BlurImage from "@/components/BlurImage";
 import { projects } from "@/data/projects";
 import ProjectTitle from "@/components/ProjectTitle";
 
@@ -16,7 +16,7 @@ export default function PortfolioPage() {
               className="group block"
             >
               <div className="relative overflow-hidden aspect-3/2 bg-border mb-3">
-                <Image
+                <BlurImage
                   src={project.coverImage}
                   alt={project.title}
                   fill
@@ -43,7 +43,7 @@ export default function PortfolioPage() {
               className="group block"
             >
               <div className="relative overflow-hidden aspect-4/3 bg-border mb-4">
-                <Image
+                <BlurImage
                   src={project.coverImage}
                   alt={project.title}
                   fill
