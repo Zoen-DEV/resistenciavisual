@@ -10,15 +10,7 @@ export default function SobreMiPage() {
   return (
     <div className="py-8 px-4 lg:px-16 flex flex-col items-center">
       <div className="w-full lg:max-w-4/6 flex flex-col gap-10">
-        <div className="flex flex-col gap-5">
-          {t.about.bio.map((paragraph, i) => (
-            <p key={i} className="text-sm text-muted leading-relaxed text-justify">
-              {paragraph}
-            </p>
-          ))}
-        </div>
-
-        <div className="relative overflow-hidden w-full" style={{ aspectRatio: "3/2" }}>
+        <div className="relative overflow-hidden w-4/8 self-center" style={{ aspectRatio: "3/2" }}>
           <BlurImage
             src={cldUrl("Varios/47230003_opxkyp")}
             alt="Camila Lemos"
@@ -28,6 +20,14 @@ export default function SobreMiPage() {
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 66vw"
           />
+        </div>
+
+        <div className="flex flex-col gap-5">
+          {t.about.bio.map((paragraph, i) => (
+            <p key={i} className="text-sm text-muted leading-relaxed text-justify">
+              {paragraph}
+            </p>
+          ))}
         </div>
       </div>
     </div>
