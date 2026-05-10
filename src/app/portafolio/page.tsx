@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 import BlurImage from "@/components/BlurImage";
 import { projects } from "@/data/projects";
 import ProjectTitle from "@/components/ProjectTitle";
@@ -10,55 +13,61 @@ export default function PortfolioPage() {
       <div className="w-full lg:w-4/6">
         {/* Mobile: lista vertical */}
         <div className="flex flex-col gap-10 lg:hidden">
-          {projects.map((project) => (
-            <Link
+          {projects.map((project, i) => (
+            <motion.div
               key={project.slug}
-              href={`/portafolio/${project.slug}`}
-              className="group block"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
             >
-              <div className="relative overflow-hidden aspect-3/2 bg-border mb-3">
-                <BlurImage
-                  src={project.coverImage}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105"
-                  sizes="100vw"
-                />
-              </div>
-              <div className="flex flex-col gap-0.5">
-                <p className="font-(family-name:--font-cormorant) text-xl font-light text-foreground">
-                  <ProjectTitle slug={project.slug} fallback={project.title} />
-                </p>
-                {project.year !== "" ? <ProjectYear slug={project.slug} fallback={project.year} className="text-[10px] text-muted tracking-widest" /> : null}
-              </div>
-            </Link>
+              <Link href={`/portafolio/${project.slug}`} className="group block">
+                <div className="relative overflow-hidden aspect-3/2 bg-border mb-3">
+                  <BlurImage
+                    src={project.coverImage}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105"
+                    sizes="100vw"
+                  />
+                </div>
+                <div className="flex flex-col gap-0.5">
+                  <p className="font-(family-name:--font-cormorant) text-xl font-light text-foreground">
+                    <ProjectTitle slug={project.slug} fallback={project.title} />
+                  </p>
+                  {project.year !== "" ? <ProjectYear slug={project.slug} fallback={project.year} className="text-[10px] text-muted tracking-widest" /> : null}
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
 
         {/* Desktop: grid 2 columnas con aire */}
         <div className="hidden lg:grid grid-cols-2 gap-x-10 gap-y-14">
-          {projects.map((project) => (
-            <Link
+          {projects.map((project, i) => (
+            <motion.div
               key={project.slug}
-              href={`/portafolio/${project.slug}`}
-              className="group block"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
             >
-              <div className="relative overflow-hidden aspect-4/3 bg-border mb-4">
-                <BlurImage
-                  src={project.coverImage}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105"
-                  sizes="40vw"
-                />
-              </div>
-              <div className="flex flex-col gap-0.5">
-                <p className="font-(family-name:--font-cormorant) text-lg font-light text-foreground group-hover:opacity-60 transition-opacity duration-300">
-                  <ProjectTitle slug={project.slug} fallback={project.title} />
-                </p>
-                {project.year !== "" ? <ProjectYear slug={project.slug} fallback={project.year} className="text-[10px] text-muted tracking-widest" /> : null}
-              </div>
-            </Link>
+              <Link href={`/portafolio/${project.slug}`} className="group block">
+                <div className="relative overflow-hidden aspect-4/3 bg-border mb-4">
+                  <BlurImage
+                    src={project.coverImage}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105"
+                    sizes="40vw"
+                  />
+                </div>
+                <div className="flex flex-col gap-0.5">
+                  <p className="font-(family-name:--font-cormorant) text-lg font-light text-foreground group-hover:opacity-60 transition-opacity duration-300">
+                    <ProjectTitle slug={project.slug} fallback={project.title} />
+                  </p>
+                  {project.year !== "" ? <ProjectYear slug={project.slug} fallback={project.year} className="text-[10px] text-muted tracking-widest" /> : null}
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>
