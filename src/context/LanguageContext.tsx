@@ -28,7 +28,7 @@ export const translations = {
     },
     projects: {
       titles: {
-        "cuerpo-territorio": "Cuerpo-Territorio",
+        "cuerpo-territorio": "Cuerpo-Territorio: Cartografías de la memoria y el tiempo.",
         "cotidiana": "Cotidiana",
         "lo-que-comemos": "Lo que comemos",
         "hecha-un-vistazo": "Hecha un vistazo",
@@ -44,7 +44,8 @@ export const translations = {
     },
     contact: {
       title: "Contacto",
-      intro: "Para consultas de proyectos, licencias o colaboraciones:",
+      intro: "Si tienes interés en mi trabajo, quieres conversar o tienes cualquier otro motivo para entrar en contacto, puedes escribirme a",
+      email: "visual.resistencia@gmail.com",
     },
   },
   en: {
@@ -70,7 +71,7 @@ export const translations = {
     },
     projects: {
       titles: {
-        "cuerpo-territorio": "Body-Territory",
+        "cuerpo-territorio": "Body-Territory: Cartographies of Memory and Time.",
         "cotidiana": "Daily",
         "lo-que-comemos": "What we eat",
         "hecha-un-vistazo": "Take a Look",
@@ -86,7 +87,8 @@ export const translations = {
     },
     contact: {
       title: "Contact",
-      intro: "For project inquiries, licensing or collaborations:",
+      intro: "If you are interested in my work, would like to connect, or have any other reason to reach out, feel free to email me at",
+      email: "visual.resistencia@gmail.com",
     },
   },
 } satisfies Record<Lang, unknown>;

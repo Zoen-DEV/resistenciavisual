@@ -12,7 +12,7 @@ export interface Photo {
 export interface Project {
   slug: string;
   title: string;
-  year: number;
+  year: string;
   description: string;
   coverImage: string;
   photos: Photo[];
@@ -22,12 +22,12 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "cuerpo-territorio",
-    title: "Cuerpo-Territorio",
-    year: 2024,
+    title: "Cuerpo-Territorio: Cartografías de la memoria y el tiempo.",
+    year: "2023 — En proceso",
     wip: true,
     description:
-      "Una exploración visual sobre la memoria y los espacios que habitamos. Retratos del paso del tiempo en lugares cotidianos.",
-    coverImage: cldUrl("cuerpo-territorio/1_hj74dt", "thumb"),
+      "Cuerpo-Territorio: cartografías de la memoria y el tiempo es un proyecto fotográfico y audiovisual en desarrollo que documenta la transformación física y emocional tras el diagnóstico de cáncer de seno y la mastectomía radical de mi madre. A través de una narrativa construida entre ambas, la obra utiliza el registro documental y la experimentación visual para reflexionar sobre el cuerpo como territorio de memoria y las cicatrices que deja la enfermedad. Situándose en la intersección entre el tránsito íntimo y la realidad social de miles de mujeres en América Latina, el proyecto utiliza la imagen como una herramienta de acompañamiento y resistencia, transformando la experiencia personal en un espacio de diálogo colectivo sobre los cuidados, la memoria y la resiliencia.",
+    coverImage: cldUrl("cuerpo-territorio/4_ivphqq", "thumb"),
     photos: [
       { id: "ct1", src: cldUrl("cuerpo-territorio/1_hj74dt"), alt: "Cuerpo-Territorio 1", width: 4391, height: 5400, blurDataURL: cldBlur("cuerpo-territorio/1_hj74dt") },
       { id: "ct2", src: cldUrl("cuerpo-territorio/2_xfttau"), alt: "Cuerpo-Territorio 2", width: 1080, height: 1080, blurDataURL: cldBlur("cuerpo-territorio/2_xfttau") },
@@ -39,10 +39,10 @@ export const projects: Project[] = [
   {
     slug: "cotidiana",
     title: "Cotidiana",
-    year: 2024,
+    year: "",
     description:
       "Lo extraordinario en lo ordinario. Una serie sobre los momentos que pasan desapercibidos en la vida diaria.",
-    coverImage: cldUrl("cotidiana/1_rbf5tj", "thumb"),
+    coverImage: cldUrl("cotidiana/5_inyio5", "thumb"),
     photos: [
       { id: "c1", src: cldUrl("cotidiana/1_rbf5tj"), alt: "Cotidiana 1", width: 943,  height: 720,  blurDataURL: cldBlur("cotidiana/1_rbf5tj") },
       { id: "c2", src: cldUrl("cotidiana/2_q0lqee"), alt: "Cotidiana 2", width: 683,  height: 499,  blurDataURL: cldBlur("cotidiana/2_q0lqee") },
@@ -58,10 +58,10 @@ export const projects: Project[] = [
   {
     slug: "lo-que-comemos",
     title: "Lo que comemos",
-    year: 2023,
+    year: "",
     description:
       "Un estudio sobre la relación entre la cultura y la alimentación. La mesa como espacio de encuentro y memoria.",
-    coverImage: cldUrl("lo-que-comemos/1_e8bvsf", "thumb"),
+    coverImage: cldUrl("lo-que-comemos/9_z7jvf9", "thumb"),
     photos: [
       { id: "lc1",  src: cldUrl("lo-que-comemos/1_e8bvsf"),  alt: "Lo que comemos 1",  width: 2048, height: 1416, blurDataURL: cldBlur("lo-que-comemos/1_e8bvsf") },
       { id: "lc2",  src: cldUrl("lo-que-comemos/2_zzhtdo"),  alt: "Lo que comemos 2",  width: 2048, height: 1365, blurDataURL: cldBlur("lo-que-comemos/2_zzhtdo") },
@@ -79,7 +79,7 @@ export const projects: Project[] = [
   {
     slug: "hecha-un-vistazo",
     title: "Hecha un vistazo",
-    year: 0,
+    year: "",
     description: "",
     coverImage: cldUrl("take-a-look/1_auzvch", "thumb"),
     photos: [

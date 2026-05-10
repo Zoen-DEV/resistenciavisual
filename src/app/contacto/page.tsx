@@ -6,18 +6,20 @@ export default function ContactoPage() {
   const { t } = useLang();
 
   return (
-    <div className="px-8 py-8">
-      <div className="max-w-lg">
-        <h1 className="font-(family-name:--font-cormorant) text-3xl font-light text-foreground mb-6">
-          {t.contact.title}
-        </h1>
-        <p className="text-sm text-muted leading-relaxed">{t.contact.intro}</p>
-        <a
-          href="mailto:hola@camila-lemos.com"
-          className="mt-4 block text-sm text-foreground hover:opacity-60 transition-opacity"
-        >
-          hola@camila-lemos.com
-        </a>
+    <div className="py-8 px-4 lg:px-16 flex flex-col items-center lg:items-start">
+      <div className="w-full lg:max-w-4/6">
+        <p className="text-sm text-muted leading-relaxed">
+          {t.contact.intro}{" "}
+          <a
+            href={`mailto:${t.contact.email}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground hover:opacity-60 transition-opacity"
+          >
+            {t.contact.email}
+          </a>
+          .
+        </p>
       </div>
     </div>
   );

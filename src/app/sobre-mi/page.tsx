@@ -6,19 +6,11 @@ export default function SobreMiPage() {
   const { t } = useLang();
 
   return (
-    <div className="px-8 py-12 lg:py-16">
-      <div className="max-w-xl">
-        <div className="w-10 h-px bg-border mb-8" />
+    <div className="py-8 px-4 lg:px-16 flex flex-col items-center">
+      <div className="w-full lg:max-w-4/6">
         <div className="flex flex-col gap-5">
           {t.about.bio.map((paragraph, i) => (
-            <p
-              key={i}
-              className={`leading-relaxed ${
-                i === 0
-                  ? "text-base text-foreground/80"
-                  : "text-sm text-muted"
-              }`}
-            >
+            <p key={i} className="text-sm text-muted leading-relaxed text-justify">
               {paragraph}
             </p>
           ))}

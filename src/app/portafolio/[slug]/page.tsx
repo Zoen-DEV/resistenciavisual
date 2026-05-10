@@ -45,15 +45,15 @@ export default async function ProjectPage({ params }: Props) {
   if (!project) notFound();
 
   return (
-    <div className="px-8 py-8">
-      <div className="mb-8 max-w-xl">
-        <div className="flex items-center gap-3 mb-2 flex-wrap">
+    <div className="py-8 px-4 lg:px-16 flex flex-col items-center gap-8 lg:gap-12">
+      <div className="mb-4 lg:mb-10 w-full lg:max-w-4/6 flex flex-col gap-4">
+        <div className="flex items-baseline gap-4 mb-1">
           <h1 className="font-(family-name:--font-cormorant) text-3xl font-light text-foreground">
             <ProjectTitle slug={project.slug} fallback={project.title} />
           </h1>
           {project.wip && <WipBadge />}
         </div>
-        {project.year !== 0 && <p className="text-xs text-muted tracking-widest mb-4">{project.year}</p>}
+        {project.year !== "" && <p className="text-xs text-muted tracking-widest mt-1 mb-4">{project.year}</p>}
         <ProjectDescription slug={project.slug} fallback={project.description} />
       </div>
 

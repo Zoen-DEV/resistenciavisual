@@ -54,7 +54,7 @@ export default function Sidebar() {
                     <Link
                       href={`/portafolio/${project.slug}`}
                       onClick={closeMenu}
-                      className={`block py-1 text-sm transition-colors ${
+                      className={`block py-1 text-sm transition-colors outline-none ${
                         isProjectActive(project.slug) ? "text-foreground font-medium" : "text-muted"
                       }`}
                     >
@@ -93,7 +93,7 @@ export default function Sidebar() {
                   <li key={project.slug}>
                     <Link
                       href={`/portafolio/${project.slug}`}
-                      className={`block py-1 text-xs transition-colors ${
+                      className={`block py-1 text-xs transition-colors outline-none ${
                         isProjectActive(project.slug)
                           ? "text-foreground font-medium"
                           : "text-muted hover:text-foreground"
@@ -119,7 +119,7 @@ function NavLink({ href, active, children }: { href: string; active: boolean; ch
   return (
     <Link
       href={href}
-      className={`block py-1.5 text-sm transition-colors ${active ? "text-foreground font-medium" : "text-muted hover:text-foreground"}`}
+      className={`block py-1.5 text-sm transition-colors outline-none ${active ? "text-foreground font-medium" : "text-muted hover:text-foreground"}`}
     >
       {children}
     </Link>
@@ -131,7 +131,7 @@ function MobileNavLink({ href, active, onClick, children }: { href: string; acti
     <Link
       href={href}
       onClick={onClick}
-      className={`block py-2 text-base transition-colors border-b border-border/50 ${active ? "text-foreground font-medium" : "text-muted"}`}
+      className={`block py-2 text-base transition-colors border-b border-border/50 outline-none ${active ? "text-foreground font-medium" : "text-muted"}`}
     >
       {children}
     </Link>
