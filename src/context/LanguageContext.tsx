@@ -32,6 +32,7 @@ export const translations = {
         "cotidiana": "Cotidiana",
         "lo-que-comemos": "Lo que comemos",
         "hecha-un-vistazo": "Hecha un vistazo",
+        "collage": "Collage",
       },
       years: {
         "cuerpo-territorio": "2023 — En proceso",
@@ -79,6 +80,7 @@ export const translations = {
         "cotidiana": "Daily",
         "lo-que-comemos": "What we eat",
         "hecha-un-vistazo": "Take a Look",
+        "collage": "Collage",
       },
       years: {
         "cuerpo-territorio": "2023 — In progress",
