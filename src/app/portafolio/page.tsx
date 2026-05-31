@@ -7,10 +7,29 @@ import { projects } from "@/data/projects";
 import ProjectTitle from "@/components/ProjectTitle";
 import ProjectYear from "@/components/ProjectYear";
 
+const REEL_ID = "7Yot3bWkxSw";
+
 export default function PortfolioPage() {
   return (
     <div className="py-8 px-4 lg:px-16 flex flex-col items-center">
       <div className="w-full lg:w-4/6">
+        {/* Reel */}
+        <motion.div
+          className="mb-14"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+        >
+          <div className="relative w-full aspect-video bg-black overflow-hidden">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${REEL_ID}?rel=0&modestbranding=1`}
+              title="Reel — Camila Lemos"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
+          </div>
+        </motion.div>
         {/* Mobile: lista vertical */}
         <div className="flex flex-col gap-10 lg:hidden">
           {projects.map((project, i) => (

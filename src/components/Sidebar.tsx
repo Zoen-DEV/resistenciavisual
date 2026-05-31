@@ -75,11 +75,11 @@ export default function Sidebar() {
         <div className="mb-10">
           <Link
             href="/"
-            className="font-(family-name:--font-cormorant) text-xl font-semibold tracking-tight hover:opacity-70 transition-opacity text-foreground"
+            className="font-(family-name:--font-cormorant) text-3xl font-semibold tracking-tight hover:opacity-70 transition-opacity text-foreground leading-tight"
           >
             Camila Lemos
           </Link>
-          <p className="font-(family-name:--font-cormorant) italic text-[11px] text-muted mt-1 leading-snug tracking-wide">
+          <p className="font-(family-name:--font-cormorant) italic text-sm text-muted mt-1 leading-snug tracking-wide">
             Resistencia Visual
           </p>
           <div className="mt-3 w-6 h-px bg-border" />
