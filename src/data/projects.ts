@@ -85,9 +85,9 @@ export const projects: Project[] = [
     photos: [
       { id: "cl1", src: cldUrl("COLLAGE/Angelica_Male_Juanjo_Collage_wuzej8"),                  alt: "Angélica, Male, Juanjo",      width: 2362, height: 2362, blurDataURL: cldBlur("COLLAGE/Angelica_Male_Juanjo_Collage_wuzej8") },
       { id: "cl2", src: cldUrl("COLLAGE/COLLAGE_8M_rologi"),                                     alt: "8M",                          width: 2362, height: 2362, blurDataURL: cldBlur("COLLAGE/COLLAGE_8M_rologi") },
-      { id: "cl3", src: cldUrl("COLLAGE/COLLAGE_POR_QUE_SI_IMPRESION_RETABLO_20X20_z9bku2"),     alt: "Por qué sí",                  width: 1080, height: 1080, blurDataURL: cldBlur("COLLAGE/COLLAGE_POR_QUE_SI_IMPRESION_RETABLO_20X20_z9bku2") },
-      { id: "cl4", src: cldUrl("COLLAGE/Espiritu_libre_czmspa"),                                 alt: "Espíritu libre",              width: 2362, height: 2362, blurDataURL: cldBlur("COLLAGE/Espiritu_libre_czmspa") },
       { id: "cl5", src: cldUrl("COLLAGE/Lucha_hoy_roov83"),                                      alt: "Lucha hoy",                   width: 2362, height: 2362, blurDataURL: cldBlur("COLLAGE/Lucha_hoy_roov83") },
+      { id: "cl4", src: cldUrl("COLLAGE/Espiritu_libre_czmspa"),                                 alt: "Espíritu libre",              width: 2362, height: 2362, blurDataURL: cldBlur("COLLAGE/Espiritu_libre_czmspa") },
+      { id: "cl3", src: cldUrl("COLLAGE/COLLAGE_POR_QUE_SI_IMPRESION_RETABLO_20X20_z9bku2"),     alt: "Por qué sí",                  width: 1080, height: 1080, blurDataURL: cldBlur("COLLAGE/COLLAGE_POR_QUE_SI_IMPRESION_RETABLO_20X20_z9bku2") },
       { id: "cl6", src: cldUrl("COLLAGE/Nadie_es_normal_glaciar_perito_wbuwr5"),                 alt: "Nadie es normal — Glaciar Perito Moreno", width: 1080, height: 1080, blurDataURL: cldBlur("COLLAGE/Nadie_es_normal_glaciar_perito_wbuwr5") },
       { id: "cl7", src: cldUrl("COLLAGE/por_la_carretera_color_originial_dg3f06"),               alt: "Por la carretera",            width: 1080, height: 1080, blurDataURL: cldBlur("COLLAGE/por_la_carretera_color_originial_dg3f06") },
       { id: "cl8", src: cldUrl("COLLAGE/REBELION_X_ROJAVA_-_15_FEB_qnnfku"),                     alt: "Rebelión x Rojava — 15 feb",  width: 1080, height: 1080, blurDataURL: cldBlur("COLLAGE/REBELION_X_ROJAVA_-_15_FEB_qnnfku") },
